@@ -27,63 +27,63 @@ const lowerCaseAlphabet = [
   `z`,
 ]
 
-const upperCaseAlphabet = [
-  `A`,
-  `B`,
-  `C`,
-  `D`,
-  `E`,
-  `F`,
-  `G`,
-  `H`,
-  `I`,
-  `J`,
-  `K`,
-  `L`,
-  `M`,
-  `N`,
-  `O`,
-  `P`,
-  `Q`,
-  `R`,
-  `S`,
-  `T`,
-  `U`,
-  `V`,
-  `W`,
-  `X`,
-  `Y`,
-  `Z`,
-]
+const charIsNotLetter = (char) => {
+  const regex = /\s|\W/g
+  if (regex.test(char)) {
+    return true
+  }
+  return false
+}
 
 const caesarCipher = (string, shift) => {
-  if (shift > 26 || shift < 0) {
-    return `use shift value between 0 and 26`
+  if (shift > 25 || shift < 0) {
+    return `use shift value between 0 and 25`
   }
   const stringArray = string.split(``)
   const newIndexArr = []
   stringArray.forEach((splitE) => {
-    lowerCaseAlphabet.forEach((lowE, lowIndex) => {
-      if (splitE.toLowerCase() === lowE) {
-        newIndexArr.push(lowIndex)
-      }
-    })
-  })
-  const newLetterArr = []
-  newIndexArr.forEach((newE, newIndex) => {
-    if (stringArray[newIndex] === stringArray[newIndex].toUpperCase()) {
-      upperCaseAlphabet.forEach((upperE, upperIndex) => {
-        if (newE + shift === upperIndex) {
-          newLetterArr.push(upperE)
+    if (charIsNotLetter(splitE)) {
+      newIndexArr.push(splitE)
+    } else {
+      lowerCaseAlphabet.forEach((lowE, lowIndex) => {
+        if (splitE.toLowerCase() === lowE) {
+          newIndexArr.push(lowIndex)
         }
       })
     }
-    if (stringArray[newIndex] === stringArray[newIndex].toLowerCase()) {
-      lowerCaseAlphabet.forEach((lowE, lowIndex) => {
-        if (newE + shift === lowIndex) {
-          newLetterArr.push(lowE)
-        }
-      })
+  })
+  const newLetterArr = []
+  newIndexArr.forEach((newE, newIndex) => {
+    const distanceFromEnd = 26 - newE
+    if (charIsNotLetter(newE) === false) {
+      if (stringArray[newIndex] === stringArray[newIndex].toUpperCase()) {
+        lowerCaseAlphabet.forEach((lowerE, lowerIndex) => {
+          if (shift < distanceFromEnd && newE + shift === lowerIndex) {
+            newLetterArr.push(lowerE.toUpperCase())
+          }
+          if (shift >= distanceFromEnd) {
+            const difference = shift - 26
+            if (newE + difference === lowerIndex) {
+              newLetterArr.push(lowerE.toUpperCase())
+            }
+          }
+        })
+      }
+      if (stringArray[newIndex] === stringArray[newIndex].toLowerCase()) {
+        lowerCaseAlphabet.forEach((lowerE, lowerIndex) => {
+          if (shift < distanceFromEnd && newE + shift === lowerIndex) {
+            newLetterArr.push(lowerE)
+          }
+          if (shift >= distanceFromEnd) {
+            const difference = shift - 26
+            if (newE + difference === lowerIndex) {
+              newLetterArr.push(lowerE)
+            }
+          }
+        })
+      }
+    } else {
+      newLetterArr.push(newE)
     }
   })
   const finalString = newLetterArr.join(``)
