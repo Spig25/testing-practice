@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655326701897" clover="3.2.0">
-  <project timestamp="1655326701897" name="All files">
+<coverage generated="1655326791194" clover="3.2.0">
+  <project timestamp="1655326791194" name="All files">
     <metrics statements="51" coveredstatements="48" conditionals="32" coveredconditionals="29" methods="13" coveredmethods="13" elements="96" coveredelements="90" complexity="0" loc="51" ncloc="51" packages="1" files="4" classes="4"/>
     <file name="caesarCipher.js" path="/home/kasey/repos/testing-practice/src/caesarCipher.js">
       <metrics statements="41" coveredstatements="38" conditionals="32" coveredconditionals="29" methods="7" coveredmethods="7"/>
       <line num="1" count="1" type="stmt"/>
       <line num="30" count="1" type="stmt"/>
-      <line num="31" count="65" type="stmt"/>
-      <line num="32" count="65" type="cond" truecount="2" falsecount="0"/>
-      <line num="33" count="2" type="stmt"/>
-      <line num="35" count="63" type="stmt"/>
+      <line num="31" count="66" type="stmt"/>
+      <line num="32" count="66" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="35" count="62" type="stmt"/>
       <line num="38" count="1" type="stmt"/>
       <line num="39" count="6" type="cond" truecount="4" falsecount="0"/>
       <line num="40" count="1" type="stmt"/>
@@ -17,14 +17,14 @@
       <line num="43" count="5" type="stmt"/>
       <line num="44" count="5" type="stmt"/>
       <line num="45" count="33" type="cond" truecount="2" falsecount="0"/>
-      <line num="46" count="1" type="stmt"/>
-      <line num="48" count="32" type="stmt"/>
-      <line num="49" count="832" type="cond" truecount="2" falsecount="0"/>
+      <line num="46" count="2" type="stmt"/>
+      <line num="48" count="31" type="stmt"/>
+      <line num="49" count="806" type="cond" truecount="2" falsecount="0"/>
       <line num="50" count="31" type="stmt"/>
       <line num="55" count="5" type="stmt"/>
       <line num="56" count="5" type="stmt"/>
-      <line num="57" count="32" type="stmt"/>
-      <line num="58" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="57" count="33" type="stmt"/>
+      <line num="58" count="33" type="cond" truecount="2" falsecount="0"/>
       <line num="59" count="31" type="cond" truecount="2" falsecount="0"/>
       <line num="60" count="2" type="stmt"/>
       <line num="61" count="52" type="cond" truecount="4" falsecount="0"/>
@@ -41,7 +41,7 @@
       <line num="78" count="130" type="stmt"/>
       <line num="79" count="130" type="cond" truecount="2" falsecount="0"/>
       <line num="80" count="5" type="stmt"/>
-      <line num="86" count="1" type="stmt"/>
+      <line num="86" count="2" type="stmt"/>
       <line num="89" count="5" type="stmt"/>
       <line num="90" count="5" type="stmt"/>
       <line num="93" count="1" type="stmt"/>

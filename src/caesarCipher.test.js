@@ -16,6 +16,10 @@ test(`keep spacing`, () => {
   expect(caesarCipher(`Hello friend`, 1)).toBe(`Ifmmp gsjfoe`)
 })
 
+test(`keeps punctuation`, () => {
+  expect(caesarCipher(`hello.`, 1)).toBe(`ifmmp.`)
+})
+
 test(`only shifts 0-25`, () => {
   expect(caesarCipher(`hello`, 26)).toBe(`use shift value between 0 and 25`)
 })
